@@ -1,23 +1,20 @@
-import React from "react";
-import { Button, Text, View } from "react-native";
+import React, { useState } from "react";
+import { Button, Text, TextInput, View } from "react-native";
 
 const HelloWorld = (props) => {
-  const [name, setName] = useState('friend');
-    
+  const [isGood, setIsGood] = useState(false);
+
   return (
     <View>
       <Text>Welcome to Muze.</Text>
-      <Text>Today's theme is {props.theme}</Text>
-      <Text>What is your name, {name}?</Text>
-      <TextInput
-        style={{
-          height: 40,
-          borderColor: "gray",
-          borderWidth: 1,
+      <Text>Today's theme is "{props.theme}".</Text>
+      <Text>Is it good right now?: {isGood ? "Yup. :)" : "No. :("}</Text>
+      <Button
+        onPress={() => {
+          setIsGood(true);
         }}
-        defaultValue="friend"
-        value={name}
-        onChangeText={setName(name)}
+        disabled={isGood}
+        title={!isGood ? "Make it good" : "Nice"}
       />
     </View>
   );

@@ -1,12 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import HelloWorld from './src/components/hello-world';
+import PizzaTranslator from './src/components/pizza-translator/pizza-translator';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <HelloWorld />
+      <Text>Muze</Text>
+      <HelloWorld theme="Kentucky Folk Aesthetic" />
+      <PizzaTranslator />
       <StatusBar style="auto" />
     </View>
   );
